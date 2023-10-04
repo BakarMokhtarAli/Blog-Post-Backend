@@ -2,6 +2,7 @@ import express  from "express";
 import prisma from "./lib/index.js";
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
+import authenticate from "./middleware/authenticate.js";
 const SECRET_KEY= process.env.SECRET_KEY
 const router = express.Router();
 
@@ -95,7 +96,7 @@ router.post("/login", async (req,res)=>{
     }
 })
 
-router.put("/:id", async(req,res)=>{
+router.put("/:id", authenticate ,async(req,res)=>{
     try {
         const { id } = req.params;
         const { name, email, password } = req.body;
@@ -119,7 +120,7 @@ router.put("/:id", async(req,res)=>{
     }
 });
 
-router.delete("/:id",async(req,res)=>{
+router.delete("/:id",authenticate,async(req,res)=>{
     try {
         const { id } = req.params
         const owner = await prisma.owner.delete({
