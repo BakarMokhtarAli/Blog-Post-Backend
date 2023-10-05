@@ -1,6 +1,8 @@
 ## API Documentation for Blog Post
 
-### **GET /owner**
+`BASE_URL= https://blog-post-mojt.onrender.com`
+
+### **GET /api/owner**
 
 **Description:** Get all owners.
 
@@ -29,7 +31,7 @@ Method: GET
 }
 ```
 
-### **GET /owner/:id**
+### **GET /api/owner/:id**
 
 **Description:** Get an owner by ID.
 
@@ -57,7 +59,7 @@ id: The ID of the owner.
 }
 ```
 
-### **POST /owner/signup**
+### **POST /api/owner/signup**
 
 **Description:** Sign up a new owner.
 
@@ -96,7 +98,7 @@ Method: POST
 }
 ```
 
-### **POST /owner/login**
+### **POST /api/owner/login**
 
 **Description:** Log in an existing owner.
 
@@ -127,7 +129,7 @@ Method: POST
 }
 ```
 
-### **PUT /owner/:id**
+### **PUT /api/owner/:id**
 
 **Description:** Update an owner by ID.
 
@@ -160,7 +162,7 @@ Headers:
 }
 ```
 
-### **DELETE /owner/:id**
+### **DELETE /api/owner/:id**
 
 **Description:** Delete an owner by ID.
 
@@ -188,7 +190,7 @@ id: The ID of the owner.
 
 ### Posts
 
-### **GET /post**
+### **GET /api/post**
 
 **Description:** Get all posts.
 
@@ -219,7 +221,7 @@ Method: GET
 }
 ```
 
-### **GET /post/:id**
+### **GET /api/post/:id**
 
 **Description:** Get a post by ID.
 
@@ -248,7 +250,7 @@ id: The ID of the post.
 }
 ```
 
-### **POST /post**
+### **POST /api/post**
 
 **Description:** Create a new post.
 
@@ -282,7 +284,7 @@ Headers:
 }
 ```
 
-### **PUT /post/:id**
+### **PUT /api/post/:id**
 
 **Description:** Update a post by ID.
 
@@ -316,7 +318,7 @@ id: The ID of the post.
 }
 ```
 
-### **DELETE /post/:id**
+### **DELETE /api/post/:id**
 
 **Description:** Delete a post by ID.
 
@@ -344,4 +346,4 @@ id: The ID of the post.
 
 ### Authentication
 
-All requests to the `/post` endpoint must be authenticated with a valid JWT token. The token can be obtained by logging in as an owner.
+All requests to the `/api/post` endpoint must be authenticated with a valid JWT token. The token can be obtained by logging in as an owner.
